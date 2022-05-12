@@ -18,10 +18,7 @@ function Services() {
   return (
       <Element id="service" name="service" style={{marginBottom:"40px"}}>
            
-        <div className='w-full my-40 h-auto flex flex-col justify-center items-center mb-5'>
-            <p className='text-sm uppercase text-gray-400'>
-                my skills
-            </p>
+        <div className='w-full my-40 h-auto flex flex-col justify-center items-center mb-5 mt-10'>
             <h1 className='text-black text-6xl font-bold text-center'>
                 My Expertise
             </h1>

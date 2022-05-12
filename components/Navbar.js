@@ -20,22 +20,22 @@ function Navbar() {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    activeClass="Home"
+                    activeClass="home"
                     to="home"
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-point text-black px-3 py-2 text-md hover:text-pink-500"
+                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
                   >
                     Home
                   </Link>
                   <Link
-                    activeClass="services"
-                    to="services"
+                    activeClass="service"
+                    to="service"
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-point text-black px-3 py-2 text-md hover:text-pink-500"
+                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
                   >
                     Services
                   </Link>
@@ -45,17 +45,17 @@ function Navbar() {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-point text-black px-3 py-2 text-md hover:text-pink-500"
+                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
                   >
                     Work
                   </Link>
                   <Link
-                    activeClass="Clients"
-                    to="Clients"
+                    activeClass="clients"
+                    to="clients"
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-point text-black px-3 py-2 text-md hover:text-pink-500"
+                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
                   >
                     Clients
                   </Link>
@@ -65,7 +65,7 @@ function Navbar() {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-point text-black px-3 py-2 text-md hover:text-pink-500"
+                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
                   >
                     Contact
                   </Link>
