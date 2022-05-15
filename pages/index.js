@@ -1,7 +1,6 @@
-import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import Homepage from '../components/Homepage'
-import Services from '../components/Services'
+import Skills from '../components/Skills'
 import Work from '../components/Work'
 import Clients from '../components/Clients'
 import Contact from '../components/Contact'
@@ -13,7 +12,7 @@ export default function Home() {
     <div>
         <Navbar/>
           <Homepage />
-          <Services/>
+          <Skills/>
           <Work/>
           <Clients/>
           <Contact/>

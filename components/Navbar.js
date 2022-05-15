@@ -2,6 +2,22 @@ import React, { useState } from "react";
 import { Transition, transition } from "@headlessui/react"; //smooth transition
 import { Link } from "react-scroll"; // smooth scroll through the page
 
+const links = [
+  { title: "Home", link: "home" },
+  { title: "Skills", link: "skills" },
+  { title: "Work", link: "work" },
+  { title: "Clients", link: "clients" },
+  { title: "Contact", link: "contact" },
+];
+
+const linkForMobile = [
+  { href: ["/home"], activeto: "home", title: "Home" },
+  { href: ["/Skills"], activeto: "skills", title: "Skills" },
+  { href: ["/work"], activeto: "work", title: "Work" },
+  { href: ["/clients"], activeto: "clients", title: "Clients" },
+  { href: ["/contact"], activeto: "contact", title: "Contact" },
+];
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -19,56 +35,21 @@ function Navbar() {
               {/* link section */}
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <Link
-                    activeClass="home"
-                    to="home"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
-                  >
-                    Home
-                  </Link>
-                  <Link
-                    activeClass="service"
-                    to="service"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
-                  >
-                    Services
-                  </Link>
-                  <Link
-                    activeClass="work"
-                    to="work"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
-                  >
-                    Work
-                  </Link>
-                  <Link
-                    activeClass="clients"
-                    to="clients"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
-                  >
-                    Clients
-                  </Link>
-                  <Link
-                    activeClass="contact"
-                    to="contact"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
-                  >
-                    Contact
-                  </Link>
+                  {links.map((val, key) => {
+                    return (
+                      <Link
+                        key={key}
+                        activeClass={val.link}
+                        to={val.link}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="cursor-pointer text-black px-3 py-2 text-md hover:text-pink-500"
+                      >
+                        {val.title}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -137,64 +118,22 @@ function Navbar() {
                 ref={ref}
                 className="bg-white mx-4 mr-20 pt-4 pb-4 space-y-1"
               >
-                <Link
-                  href="/home"
-                  activeClass="home"
-                  to="home"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:text-pink-500 text-black block px-3  py-2 rounded-md text-base font-medium "
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/services"
-                  activeClass="services"
-                  to="services"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:text-pink-500 text-black block px-3  py-2 rounded-md text-base font-medium "
-                >
-                  Services
-                </Link>
-
-                <Link
-                  href="/work"
-                  activeClass="work"
-                  to="work"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:text-pink-500 text-black block px-3  py-2 rounded-md text-base font-medium "
-                >
-                  Work
-                </Link>
-
-                <Link
-                  href="/clients"
-                  activeClass="clients"
-                  to="clients"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:text-pink-500 text-black block px-3  py-2 rounded-md text-base font-medium "
-                >
-                  Clients
-                </Link>
-
-                <Link
-                  href="/contact"
-                  activeClass="contact"
-                  to="contact"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:text-pink-500 text-black block px-3  py-2 rounded-md text-base font-medium "
-                >
-                  Contact
-                </Link>
+                {linkForMobile.map((val, key) => {
+                  return (
+                    <Link
+                      key={key}
+                      href={val.href}
+                      activeClass={val.activeto}
+                      to={val.activeto}
+                      smooth={true}
+                      offset={50}
+                      duration={500}
+                      className="cursor-pointer hover:text-pink-500 text-black block px-3  py-2 rounded-md text-base font-medium "
+                    >
+                      {val.title}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           )}
